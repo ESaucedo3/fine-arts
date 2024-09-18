@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
 import { loadState, saveState } from '../utils/Store.js';
-import Login from './Login.vue';
 
 const theme = ref(loadState('theme') || 'light')
 
@@ -38,7 +37,6 @@ function toggleTheme() {
           <Icon :name="theme == 'light' ? 'weather-sunny' : 'weather-night'" />
         </button>
       </div>
-      <Login />
     </div>
   </nav>
 </template>

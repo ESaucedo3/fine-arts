@@ -15,18 +15,19 @@ async function logout() {
 </script>
 
 <template>
-  <span class="navbar-text">
+  <span class="navbar-text text-center">
     <button class="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0" @click="login" v-if="!identity">
       Login
     </button>
     <div v-else>
       <div class="dropdown my-2 my-lg-0">
-        <div type="button" class="bg-dark border-0 selectable no-select" data-bs-toggle="dropdown"
+        <div type="button" class="selectable no-select" data-bs-toggle="dropdown"
           aria-expanded="false">
           <div v-if="account?.picture || identity?.picture">
             <img :src="account?.picture || identity?.picture" alt="account photo" height="40" class="rounded" />
           </div>
         </div>
+        <p>{{ account.name }}</p>
         <div class="dropdown-menu dropdown-menu-sm-end dropdown-menu-start p-0" aria-labelledby="authDropdown">
           <div class="list-group">
             <router-link :to="{ name: 'Account' }">

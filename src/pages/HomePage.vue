@@ -1,6 +1,7 @@
 <script setup>
 import { AppState } from '@/AppState.js';
 import ArtCard from '@/components/ArtCard.vue';
+import Login from '@/components/Login.vue';
 import Pagination from '@/components/Pagination.vue';
 import { artsService } from '@/services/ArtsService.js';
 import Pop from '@/utils/Pop.js';
@@ -26,14 +27,15 @@ import { computed, onMounted } from 'vue';
   <section class="container-fluid">
     <div class="row">
       <!-- NOTE Account | Disabled since not using -->
-      <div class="col-md-2 d-flex flex-column justify-content-between">
-        <!-- <div class="d-flex flex-column justify-content-center">
-          <img class="guy" height="100" src="https://images.unsplash.com/photo-1523307730650-594bc63f9d67?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z3V5JTIwc2hhZGVzfGVufDB8fDB8fHww" alt="Guy">
+      <div class="col-md-2 d-flex flex-column justify-content-between border-end border-2 ">
+        <div class="d-flex flex-column justify-content-center sticky-top">
+          <!-- <img class="guy" height="100" src="https://images.unsplash.com/photo-1523307730650-594bc63f9d67?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Z3V5JTIwc2hhZGVzfGVufDB8fDB8fHww" alt="Guy">
           <p class="text-center">What</p>
           <div class="text-center">
             <button class="btn btn-outline-dark rounded-pill px-2" type="button">Logout</button>
-          </div>
-        </div> -->
+          </div> -->
+          <Login />
+        </div> 
 
         <!-- NOTE Pagination -->
         <Pagination />
